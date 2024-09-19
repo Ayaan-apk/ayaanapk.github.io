@@ -1,0 +1,214 @@
+/* General Styles for Events Page */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Top Bar (Header) Styles */
+.top-bar {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    flex: 1;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #4a148c;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #ff704d;
+}
+
+/* Events Section */
+#events {
+    padding: 100px 0 60px;
+    text-align: center;
+}
+
+#events h1 {
+    font-size: 2.5em;
+    color: #4a148c;
+    margin-bottom: 30px;
+}
+
+.events-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.events-list li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+.events-list li:last-child {
+    border-bottom: none;
+}
+
+/* Image Gallery Section with Manual Slider */
+#gallery {
+    padding: 60px 0;
+    text-align: center;
+}
+
+#gallery h2 {
+    font-size: 2em;
+    color: #4a148c;
+    margin-bottom: 30px;
+}
+
+.gallery-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap; /* Prevent line break, ensures images stay in one line */
+}
+
+.slides-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 300px; /* Adjust the width of images */
+    height: 200px; /* Set a consistent height for landscape images */
+    object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+    margin: 0 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Ensure each image stays inline */
+}
+
+/* Arrow Buttons */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* YouTube Video Section */
+#video-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+#video-section h2 {
+    font-size: 2em;
+    color: #4a148c;
+    margin-bottom: 30px;
+}
+
+.video-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-wrapper iframe {
+    width: 80%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #events h1, #gallery h2, #video-section h2 {
+        font-size: 1.8em;
+    }
+
+    .slides img {
+        width: 80%; /* Reduce size further for small screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .video-wrapper iframe {
+        width: 100%;
+        height: 300px; /* Adjust the height for smaller screens */
+    }
+}
